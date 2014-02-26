@@ -35,7 +35,11 @@ foreach ($xml->children() as $region) {
 
 $values[] = array('element' => 'england', 'id' => '', 'total' => $england_total);
 
-foreach ($values as $value) { ?>
-  <<?php echo $value['element'] ?> id="<?php echo $value['id'] ?>" total="<?php echo $value['total'] ?>" />
-<?php
+$request_format = end(explode('/', $REQUEST_PATH));
+
+if (file_exists("app/views/all_crimes.$request_format.php")) {
+  require "app/views/all_crimes.$request_format.php";
+} else {
+  #TODO: Real error handling here
+  echo "error";
 }
