@@ -1,5 +1,7 @@
 <?php
 
+header('Content-Type: text/xml');
+
 $dom = new DOMDocument;
 
 $response = $dom->createElement('response');
