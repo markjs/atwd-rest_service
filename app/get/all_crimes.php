@@ -3,6 +3,7 @@
 $xml = simplexml_load_file('data/recorded_crime.xml');
 
 $values = array();
+$england_total = 0;
 
 foreach ($xml->children() as $region) {
   $total = 0;
@@ -25,11 +26,14 @@ foreach ($xml->children() as $region) {
       break;
     default:
       $element_name = 'region';
+      $england_total += $total;
   }
 
 
   $values[] = array('element' => $element_name, 'id' => $region_name, 'total' => $total);
 }
+
+$values[] = array('element' => 'england', 'id' => '', 'total' => $england_total);
 
 foreach ($values as $value) { ?>
   <<?php echo $value['element'] ?> id="<?php echo $value['id'] ?>" total="<?php echo $value['total'] ?>" />
