@@ -17,3 +17,8 @@ foreach ($xml->children() as $region) {
 
   $values[] = array('element' => $element_name, 'id' => $region_name, 'total' => $total);
 }
+
+foreach ($values as $value) { ?>
+  <<?php echo $value['element'] ?> id="<?php echo $value['id'] ?>" total="<?php echo $value['total'] ?>">
+<?php
+}
