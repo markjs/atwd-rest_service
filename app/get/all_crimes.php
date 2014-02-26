@@ -1,5 +1,12 @@
 <?php
 
+#TODO: Handle this somewhere better
+$exploded_path = explode('/', $REQUEST_PATH);
+$request_format = end($exploded_path);
+$date_range = $exploded_path[count($exploded_path)-2];
+
+
+
 $xml = simplexml_load_file('data/recorded_crime.xml');
 
 $values = array();
@@ -35,7 +42,6 @@ foreach ($xml->children() as $region) {
 
 $values[] = array('element' => 'england', 'id' => '', 'total' => $england_total);
 
-$request_format = end(explode('/', $REQUEST_PATH));
 
 if (file_exists("app/views/all_crimes.$request_format.php")) {
   require "app/views/all_crimes.$request_format.php";
