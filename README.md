@@ -48,3 +48,7 @@ In building this application I tried to focus on minimalism, trying to solve pro
 Through using PHP includes I learnt that include paths work relative to the parent file that is including the file you're in. To stop this from creating any issues, I made sure that all included files are ultimately included within `index.php` so all file paths are relative to the root directory of the application.
 
 In deploying the application to the CEMS servers there was an issue with URL encoding that differed between `www.cems` and `isa.cems`. This was solved by substituting the `~` in the `.htaccess` file with an encoded `%7E`.
+
+## Struggles
+
+I struggled greatly with the vaugeness and inconsistencies of the provided specification. The spec missed out key details on the functionality of the application with left me a little lost when implementing certain features.
