@@ -42,3 +42,9 @@ The XML file can be viewed here, but no creation details or scripts are availabl
 - http://cems.uwe.ac.uk/~mj7-smith/atwd/data/recorded_crime.xml
 
 ## Learning outcomes
+
+In building this application I tried to focus on minimalism, trying to solve problems in as little code as is reasonable, without sacrificing simplicity and readability of code.
+
+Through using PHP includes I learnt that include paths work relative to the parent file that is including the file you're in. To stop this from creating any issues, I made sure that all included files are ultimately included within `index.php` so all file paths are relative to the root directory of the application.
+
+In deploying the application to the CEMS servers there was an issue with URL encoding that differed between `www.cems` and `isa.cems`. This was solved by substituting the `~` in the `.htaccess` file with an encoded `%7E`.
