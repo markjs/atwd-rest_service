@@ -33,6 +33,22 @@ if (preg_match('/^crimes\/[0-9,-]+\/put\/[a-z,_]+:[0-9]+\/(xml|json)$/', $REQUES
   return;
 }
 
-# If we've got this far, none of the routes have matched.
+# If we've got this far, none of the routes have matched so we'll throw a 501 (as per spec)
 
-echo '501';
+$dom = new DOMDocument;
+
+$response = $dom->createElement('response');
+$response->setAttribute('timestamp', time());
+
+$error = $dom->createElement('error');
+$error->setAttribute('code', '501');
+$error->setAttribute('desc', "This route does not match anything");
+
+$response->appendChild($error);
+
+$dom->appendChild($response);
+$dom->formatOutput = true;
+
+header('Content-Type: text/xml');
+http_response_code(501);
+echo $dom->saveXML();
