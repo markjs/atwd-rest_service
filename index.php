@@ -24,6 +24,11 @@ if (preg_match('/^crimes\/[0-9,-]+\/[a-z,_]+\/(xml|json)$/', $REQUEST_PATH)) {
 }
 
 if (preg_match('/^crimes\/[0-9,-]+\/put\/[a-z,_]+:[0-9]+\/(xml|json)$/', $REQUEST_PATH)) {
+  $date_range = $exploded_path[count($exploded_path)-4];
+  $split_query = explode(':', $exploded_path[count($exploded_path)-2]);
+  $region_slug = $split_query[0];
+  $updated_total = $split_query[1];
+
   require 'app/put/region_total.php';
   return;
 }
