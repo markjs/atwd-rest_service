@@ -3,6 +3,12 @@
 $xml = simplexml_load_file('data/recorded_crime.xml');
 
 $region = $xml->xpath("/crimes/region[@id='$region_slug']");
+
+if (count($region) == 0) {
+  print_404("Region not found");
+  return;
+}
+
 $region = $region[0];
 
 $areas = $region->xpath('area');
