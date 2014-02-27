@@ -1,5 +1,6 @@
 RewriteEngine on
 RewriteBase /%7Emj7-smith/atwd
+RewriteRule crimes/doc/index.html README.html
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . index.php [L]
