@@ -7,7 +7,8 @@ $form.on('submit', function(e) {
 
   var url = "../crimes/" + timePeriod + "/" + regionSlug + "/json";
 
-  var context = document.getElementById('chart').getContext("2d");
+  var barChartContext = document.getElementById('barChart').getContext("2d");
+  var pieChartContext = document.getElementById('pieChart').getContext("2d");
 
   $.get(url, function(data) {
     var areas = data.response.crimes.region.areas;
@@ -18,15 +19,21 @@ $form.on('submit', function(e) {
 
     $.each(areas, function(){
       labels.push(this.id);
-      values.push(this.total);
+      values.push(parseInt(this.total));
     });
 
-    var chartValues = {
+    window.labels = labels;
+    window.values = values;
+
+    var barChartValues = {
       labels: labels,
       datasets: [{ data: values }]
     }
 
-    var chart = new Chart(context).Bar(chartValues);
+    var pieChartValues = $.map(values, function(val){ return {color:'#000000',value: val}; });
+
+    var barChart = new Chart(barChartContext).Bar(barChartValues);
+    var pieChart = new Chart(pieChartContext).Pie(pieChartValues);
   });
 
 });
