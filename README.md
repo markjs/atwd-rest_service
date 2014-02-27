@@ -24,3 +24,21 @@ Source code is best viewed on GitHub at http://github.com/markjs/atwd-rest_servi
 - http://www.cems.uwe.ac.uk/~mj7-smith/atwd/app/views/region_crimes.xml.phps
 - http://www.cems.uwe.ac.uk/~mj7-smith/atwd/app/views/region_total.json.phps
 - http://www.cems.uwe.ac.uk/~mj7-smith/atwd/app/views/region_total.xml.phps
+
+The `.htaccess` file can be viewed here
+
+- http://www.cems.uwe.ac.uk/~mj7-smith/atwd/htaccess
+
+## Application decisions
+
+In building the application, it was decided that routing would be done within PHP itself, rather than the alternative - configuring all routes within a number of `.htaccess` rewrite rules. This decision was made to improve agility in configuring and developing routes. The `.htaccess` file redirects all routes to `index.php` excluding those where a file directly exists at the requested address. Within `index.php`, the URLs are processed and matched against regular expressions and the appropriate PHP script included. Once the processing is completed within this script, a view file is included based on the requested format (XML or JSON). This is configured in such a way that extra formats could easily be added with separate view files and a slight change to the regular expressions in `index.php`.
+
+## XML crime data
+
+The XML crime data was not created by a processing script. This was taken from a provided XML file and manipulated slightly. No Schema is provided.
+
+The XML file can be viewed here, but no creation details or scripts are available as none were used.
+
+- http://cems.uwe.ac.uk/~mj7-smith/atwd/data/recorded_crime.xml
+
+## Learning outcomes
