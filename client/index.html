@@ -14,7 +14,23 @@
 
     <label for="region">Select Region</label>
     <select name="region" id="region">
-      <option value="north_east">6-2013</option>
+      <option>Please select a region...</option>
+      <optgroup label="England">
+        <option value="east_midlands">East Midlands</option>
+        <option value="east_of_england">East Of England</option>
+        <option value="london">London</option>
+        <option value="north_east">North East</option>
+        <option value="north_west">North West</option>
+        <option value="south_east">South East</option>
+        <option value="south_west">South West</option>
+        <option value="west_midlands">West Midlands</option>
+        <option value="yorkshire_and_humber">Yorkshire And Humber</option>
+      </optgroup>
+      <optgroup label="Other">
+        <option value="wales">Wales</option>
+        <option value="british_transport_police">British Transport Police</option>
+        <option value="action_fraud">Action Fraud</option>
+      </optgroup>
     </select>
 
     <input type="submit" />
