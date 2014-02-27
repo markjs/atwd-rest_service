@@ -1,13 +1,5 @@
 <?php
 
-/* header('Content-Type: text/xml'); */
-
-#TODO: Handle this somewhere better
-$exploded_path = explode('/', $REQUEST_PATH);
-$request_format = end($exploded_path);
-$date_range = $exploded_path[count($exploded_path)-3];
-$region_slug = $exploded_path[count($exploded_path)-2];
-
 $xml = simplexml_load_file('data/recorded_crime.xml');
 
 $region = $xml->xpath("/crimes/region[@id='$region_slug']");
