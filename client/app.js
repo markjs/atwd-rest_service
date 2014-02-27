@@ -21,9 +21,6 @@ $form.on('submit', function(e) {
       values.push(this.total);
     });
 
-    console.log(labels);
-    console.log(values);
-
     var chartValues = {
       labels: labels,
       datasets: [{ data: values }]
