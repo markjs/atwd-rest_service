@@ -2,6 +2,8 @@
 
 $xml = simplexml_load_file('data/recorded_crime.xml');
 
+#TODO: Error handle if not found
+
 $region = $xml->xpath("/crimes/region[@id='$region_slug']");
 $region = $region[0];
 
