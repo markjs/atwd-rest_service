@@ -32,3 +32,7 @@ if (preg_match('/^crimes\/[0-9,-]+\/put\/[a-z,_]+:[0-9]+\/(xml|json)$/', $REQUES
   require 'app/put/region_total.php';
   return;
 }
+
+# If we've got this far, none of the routes have matched.
+
+echo '501';
