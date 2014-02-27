@@ -11,8 +11,7 @@ $crimes = $dom->createElement('crimes');
 $crimes->setAttribute('year', $date_range);
 
 $region = $dom->createElement('region');
-#TODO: Transform slug into pretty title
-$region->setAttribute('id', $region_slug);
+$region->setAttribute('id', transform_slug_to_title($region_slug));
 
 $region_total = 0;
 

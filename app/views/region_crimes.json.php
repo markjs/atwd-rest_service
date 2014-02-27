@@ -9,9 +9,8 @@ $response['timestamp'] = ''.time();
 $crimes = array();
 $crimes['year'] = $date_range;
 
-#TODO: Transform slug into pretty title
 $region = array();
-$region['id'] = $region_slug;
+$region['id'] = transform_slug_to_title($region_slug);
 
 $region['areas'] = array();
 

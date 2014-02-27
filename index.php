@@ -1,5 +1,7 @@
 <?php
 
+require 'functions.php';
+
 $BASE_PATH = '/atwd/';
 $REQUEST_PATH = substr($_SERVER['REQUEST_URI'], strlen($BASE_PATH));
 
