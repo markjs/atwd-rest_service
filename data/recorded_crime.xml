@@ -1535,7 +1535,7 @@
       </other_crimes_against_society>
     </area>
   </region>
-  <region id="btp">
+  <region id="british_transport_police">
     <name>British Transport Police</name>
     <area id="british_transport_police">
       <name>British Transport Police</name>
@@ -1573,7 +1573,7 @@
       </other_crimes_against_society>
     </area>
   </region>
-  <region id="af">
+  <region id="action_fraud">
     <name>Action Fraud</name>
     <area id="action_fraud">
       <name>Action Fraud</name>
