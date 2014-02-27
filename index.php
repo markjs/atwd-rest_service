@@ -2,7 +2,7 @@
 
 require 'functions.php';
 
-$BASE_PATH = '/atwd/';
+$BASE_PATH = '/~mj7-smith/atwd/';
 $REQUEST_PATH = substr($_SERVER['REQUEST_URI'], strlen($BASE_PATH));
 
 $exploded_path = explode('/', $REQUEST_PATH);
