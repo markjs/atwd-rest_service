@@ -16,6 +16,5 @@ foreach ($areas as $area) {
 if (file_exists("app/views/region_crimes.$request_format.php")) {
   require "app/views/region_crimes.$request_format.php";
 } else {
-  #TODO: Real error handling here
-  echo "error";
+  print_404("Template file not found");
 }
