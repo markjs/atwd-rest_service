@@ -1,6 +1,6 @@
 <?php
 
-header('Content-Type: text/json');
+header('Content-Type: application/json');
 
 $response = array();
 
