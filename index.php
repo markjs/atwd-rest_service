@@ -15,3 +15,8 @@ if (preg_match('/^crimes\/[0-9,-]+\/[a-z,_]+\/(xml|json)$/', $REQUEST_PATH)) {
   require 'app/get/region_crimes.php';
   return;
 }
+
+if (preg_match('/^crimes\/[0-9,-]+\/put\/[a-z,_]+:[0-9]+\/(xml|json)$/', $REQUEST_PATH)) {
+  require 'app/put/region_total.php';
+  return;
+}
