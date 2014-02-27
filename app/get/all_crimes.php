@@ -35,8 +35,6 @@ foreach ($xml->children() as $region) {
 
 $values[] = array('element' => 'england', 'id' => '', 'total' => $england_total);
 
-#TODO: Order output values?
-
 if (file_exists("app/views/all_crimes.$request_format.php")) {
   require "app/views/all_crimes.$request_format.php";
 } else {
